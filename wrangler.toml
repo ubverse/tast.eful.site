@@ -1,3 +1,26 @@
 name = "tast-eful-site"
 main = "src/index.ts"
 compatibility_date = "2023-02-23"
+
+routes = [
+    { pattern = "advic.eful.site", custom_domain = true },
+    { pattern = "blam.eful.site", custom_domain = true },
+    { pattern = "car.eful.site", custom_domain = true },
+    { pattern = "despit.eful.site", custom_domain = true },
+    { pattern = "disgrac.eful.site", custom_domain = true },
+    { pattern = "grac.eful.site", custom_domain = true },
+    { pattern = "nois.eful.site", custom_domain = true },
+    { pattern = "offenc.eful.site", custom_domain = true },
+    { pattern = "peac.eful.site", custom_domain = true },
+    { pattern = "prais.eful.site", custom_domain = true },
+    { pattern = "prid.eful.site", custom_domain = true },
+    { pattern = "rag.eful.site", custom_domain = true },
+    { pattern = "rejoic.eful.site", custom_domain = true },
+    { pattern = "remorc.eful.site", custom_domain = true },
+    { pattern = "reveng.eful.site", custom_domain = true },
+    { pattern = "sham.eful.site", custom_domain = true },
+    { pattern = "sourc.eful.site", custom_domain = true },
+    { pattern = "spit.eful.site", custom_domain = true },
+    { pattern = "tast.eful.site", custom_domain = true },
+    { pattern = "untast.eful.site", custom_domain = true },
+]
