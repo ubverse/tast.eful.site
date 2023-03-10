@@ -1,16 +1,44 @@
 {
-  "name": "upb-eful-site",
-  "version": "0.0.0",
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230221.0",
-    "typescript": "^4.9.5",
-    "vitest": "^0.28.5",
-    "wrangler": "2.11.0"
-  },
-  "private": true,
+  "name": "tast-eful-site",
+  "version": "0.1.0",
+  "author": "Caian Ertl <hi@caian.org>",
   "scripts": {
     "start": "wrangler dev",
     "deploy": "wrangler publish",
-    "test": "vitest"
+    "test": "vitest",
+    "bump:all": "npm run bump:dev && npm run bump:prod",
+    "bump:dev": "ncu --upgrade --dep dev --target minor",
+    "bump:prod": "ncu --upgrade --dep prod --target minor",
+    "check:all": "npm run check:style && npm run check:types && npm run check:duplicated",
+    "check:duplicated": "jscpd",
+    "check:style": "ts-standard src",
+    "check:types": "tsc --noEmit",
+    "fix:style": "prettier --config .prettierrc.js '**/*.ts' --write && ts-standard --fix src"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "npm run fix:style"
+    ]
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230307.0",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "husky": "^8.0.3",
+    "jscpd": "^3.5.3",
+    "lint-staged": "^13.1.4",
+    "npm-check-updates": "^16.7.12",
+    "prettier": "^2.8.4",
+    "ts-standard": "^12.0.2",
+    "typescript": "^4.9.5",
+    "vitest": "^0.29.2",
+    "wrangler": "2.12.2"
   }
 }
